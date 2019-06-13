@@ -14,9 +14,9 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
     private AuthorRepository authorRepository;
     private BookRepository bookRepository;
 
-    public DevBootStrap(BookRepository bookRepository, AuthorRepository authorRepository) {
-        this.bookRepository = bookRepository;
+    public DevBootStrap(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
+        this.bookRepository = bookRepository;
     }
 
     @Override
