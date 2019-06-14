@@ -1,8 +1,7 @@
-package Repository;
+package guru.springframework.spring5webapp.Repository;
 
-import guru.springframework.spring5webapp.vo.Book;
+import guru.springframework.spring5webapp.model.Book;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 public interface BookRepository extends CrudRepository<Book,Long> {
 
