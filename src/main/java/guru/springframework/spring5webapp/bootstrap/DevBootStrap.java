@@ -34,19 +34,24 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
         Publisher abc = new Publisher("ABC","Chicago");
         publisherRepository.save(abc);
 
+        Publisher def = new Publisher("DEF","NYC");
+        publisherRepository.save(def);
+
         //Eric
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development without EJB", "23444", abc);
         rod.getBooks().add(noEJB);
+        noEJB.getAuthors().add(rod);
+
         authorRepository.save(rod);
         bookRepository.save(noEJB);
 
 
 
         Author eric = new Author("Eric", "Evans");
-
-        Book  ddd = new Book("Domain Driven Design", "1234", abc);
+        Book  ddd = new Book("Domain Driven Design", "1234", def);
         eric.getBooks().add(ddd);
+        ddd.getAuthors().add(eric);
         authorRepository.save(eric);
         bookRepository.save(ddd);
     }
